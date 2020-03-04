@@ -25,5 +25,9 @@
     "mongoose": "^5.9.3",
     "morgan": "^1.9.1",
     "request-promise": "^4.2.5"
-  }
+  },
+  "keywords": [
+    "newsScraper",
+    "tool"
+  ]
 }
