@@ -6,7 +6,7 @@ var articleSchema = new Schema({
         type: String,
         required: true
     },
-    link {
+    link: {
         type: String,
         required: true
     },
@@ -15,3 +15,8 @@ var articleSchema = new Schema({
         ref: "Comment"
     }]
 })
+
+//article folder 
+var article = mongoose.model("article", articleSchema);
+module.exports = article; 
+
