@@ -15,10 +15,23 @@ app.use(
     })
 ); 
 
+//connects the app to our public folder 
+app.use(express.static(process.cwd() + "/public")); 
+
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({defaultLayout: "main"})
 ); 
 app.set("view engine", "handlebars");
+
+//mongo connection
+mongoose.connect("mongodb://localhost/scraped_news");
+var db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:")); 
+db.once("open", function() {
+    console.log("Connected to Mongoose!")
+}); 
+
 
 //local port 
 var port = process.env.PORT || 3000; 
