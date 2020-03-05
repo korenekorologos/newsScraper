@@ -86,4 +86,35 @@ router.get("/articles-json", function (req, res) {
             res.json(doc);
         }
     }); 
-}); 
+});
+
+router.get("/clearAll", function (req, res) {
+    article.remove{ }, function(err, doc) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("articles have been removed");
+        }
+    });
+res.redirect("/articles-json"); 
+});
+
+router.get("/readArticle/:id", function(req, res) {
+    var articleId = req.params.id; 
+    var hbsObj = {
+        article: [], 
+        body: []
+    };
+
+    
+})
+
+
+
+
+
+
+
+
+
+
