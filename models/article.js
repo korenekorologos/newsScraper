@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
-var articleSchema = new Schema({
+var ArticleSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -17,6 +17,6 @@ var articleSchema = new Schema({
 })
 
 //article folder 
-var article = mongoose.model("article", articleSchema);
-module.exports = article; 
+var Article = mongoose.model("Article", ArticleSchema);
+module.exports = Article; 
 
